@@ -64,5 +64,21 @@
     "dist",
     "LICENSE",
     "README.md"
+  ],
+  "keywords": [
+    "react",
+    "login",
+    "authentication",
+    "component",
+    "security",
+    "user",
+    "authorization",
+    "authentication-ui",
+    "auth-form",
+    "frontend",
+    "signin",
+    "signup",
+    "authenticator",
+    "authentication-library"
   ]
 }
