@@ -1,9 +1,15 @@
 import React from "react";
-import "./App.css";
 import Login from "./Login/Login";
 
 function App() {
-  return <Login />;
+  return (
+    <Login
+      validators={{
+        email: (email: string) => !!email,
+        password: (password: string) => !!password,
+      }}
+    />
+  );
 }
 
 export default App;

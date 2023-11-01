@@ -1,46 +1,78 @@
-# Getting Started with Create React App
+# React Login Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A flexible and customizable login component for React applications, built with Material-UI. This component provides an easy way to create a login form with validation support.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+You can install this component using npm:
 
-### `npm start`
+```bash
+npm install bnp-react-auth
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Usage
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To use the `Login` component in your React application, follow these steps:
 
-### `npm test`
+1. Import the `Login` component:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```javascript
+import Login from 'bnp-react-auth';
+```
 
-### `npm run build`
+2. Render the `Login` component in your JSX code:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+<Login
+  headerLabel="Sign In"
+  loginButtonLabel="Login"
+  emailFieldLabel="Email Address"
+  passwordFieldLabel="Password"
+  emailFieldHelperText="Enter your email address"
+  passwordFieldHelperText="Enter your password"
+  inputFieldSize="normal"
+  loginButtonSize="normal"
+  loginButtonColor="primary"
+  onLogin={handleLogin}
+  validators={
+    {
+        email: (email: string) => !!email,
+        password: (password: string) => !!password,
+    }
+    }
+/>
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Implement the `handleLogin` function to handle the login process. It will be called when the login button is clicked.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```javascript
+const handleLogin = ({ email, password }) => {
+  // Implement your login logic here
+};
+```
 
-### `npm run eject`
+## Props
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- `headerLabel` (optional): Set the header label for the login form.
+- `loginButtonLabel` (optional): Set the label for the login button.
+- `emailFieldLabel` (optional): Set the label for the email input field.
+- `passwordFieldLabel` (optional): Set the label for the password input field.
+- `emailFieldHelperText` (optional): Set helper text for the email input field.
+- `passwordFieldHelperText` (optional): Set helper text for the password input field.
+- `inputFieldSize` (optional): Set the size of the input fields (small, normal, or large).
+- `loginButtonSize` (optional): Set the size of the login button (small, normal, or large).
+- `loginButtonColor` (optional): Set the color of the login button.
+- `onLogin` (optional): Callback function to handle the login process.
+- `validators` (optional): An object containing validation functions for email and password. You can also specify custom error text for validation failures.
+- `onChange` (optional): Callback function for input field changes.
+- `customLoginButton` (optional): Provide a custom JSX element for the login button.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## GitHub Repository
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+You can find the source code for this component on [GitHub](https://github.com/BitsNPiecesDev/bnp-react-auth).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## License
 
-## Learn More
+This component is open-source and available under the MIT License. Feel free to use and modify it in your projects.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
